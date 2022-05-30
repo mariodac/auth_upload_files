@@ -43,6 +43,3 @@ def upload_files():
 @uploader.route('/uploads/<filename>')
 def upload(filename):
     return send_from_directory(uploader.config['UPLOAD_PATH'], filename)
-
-if __name__ == "__main__":
-    uploader.run(debug = True)
