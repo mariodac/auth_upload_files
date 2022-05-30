@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="box">
+    <h1 class="title">Enviar arquivos</h1>
+    <form action="{{ url_for('uploader.upload_files') }}" class="dropzone">
+    </form>
+</div>
+{% endblock %}
