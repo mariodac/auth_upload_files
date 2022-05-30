@@ -1,0 +1,36 @@
+#WINDOWS
+#  criar ambiente
+py -3 -m venv <nome>
+
+# iniciar ambiente
+<nome>\Scripts\activate
+
+# desativar ambiente
+deactivate
+
+# setar variavel flask 
+set FLASK_APP=project
+$env:FLASK_APP = "project"
+set FLASK_DEBUG=1
+$env:FLASK_DEBUG=1
+
+# executar flask
+python -m  flask run
+
+
+#WINDOWS
+#  criar ambiente
+python3 -m venv <nome>
+
+# iniciar ambiente
+. <nome>/bin/activate
+
+# desativar ambiente
+deactivate
+
+# setar variavel flask 
+export FLASK_APP=project
+export FLASK_DEBUG=1
+
+# executar flask
+python -m  flask run
