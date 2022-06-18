@@ -27,16 +27,43 @@ py -3 -m venv venv
 ```
 venv\Scripts\activate
 ```
-Todos as bibliotecas e suas versões estão no arquivo [requirements](requirements.txt)
+Todos as bibliotecas e suas versões estão no arquivo [requisitos](requirements.txt)
 
 Para instalar as bibliotecas siga os passos:
 
 **ATENÇÃO Ative o seu ambiente antes executar esses comandos!**
-No windows:
-```
-venv\Scripts\pip install -r requirements.txt
-```
+
+
 No Linux:
 ```
 venv/bin/pip install -r requirements.txt
 ```
+Ou execute o [Script Shell](requirements.sh)
+
+No windows:
+```
+venv\Scripts\pip install -r requirements.txt
+```
+Ou execute o [Script Batch](requirements.bat)
+
+## Execução do projeto
+
+Para executar o projeto siga os passos:
+
+**ATENÇÃO Ative o seu ambiente antes executar esses comandos!**
+
+No Linux:
+```
+export FLASK_APP=project
+export FLASK_DEBUG=1
+flask run --port=8085 --host=127.0.0.1
+```
+Ou execute o [Script Shell](run.sh)
+
+No Windows:
+```
+set FLASK_APP=project
+set FLASK_DEBUG=1
+flask run --port=8085 --host=127.0.0.1
+```
+Ou execute o [Script Batch](run.bat), [Script Powershell](run.ps1)
