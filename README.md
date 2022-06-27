@@ -33,6 +33,7 @@ Todos as bibliotecas e suas versões estão no arquivo [requisitos](requirements
 Para instalar as bibliotecas siga os passos:
 
 **ATENÇÃO [Ative](#ancora1) o seu ambiente antes executar esses comandos!**
+
 *Será criado o ambiente python e criado a base de dados*
 
 
