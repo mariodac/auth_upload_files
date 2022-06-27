@@ -48,7 +48,7 @@ Ou execute o [Script Batch](requirements.bat)
 
 ## Configuração do banco de dados
 
-Na pasta project já está criado uma banco de dados, caso queira criar outro banco de dados siga o passos:
+Para configurar o banco de dados siga o passos:
 
 No linux:
 ```
@@ -64,6 +64,8 @@ from project import db, create_app, models
 db.create_all(app=create_app())
 exit()
 ```
+
+Acesse [127.0.0.1/signup](http://127.0.0.1/signup), para criar o usuário com *username* **admin**
 
 ## Execução do projeto
 
