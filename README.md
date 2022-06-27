@@ -10,6 +10,7 @@ Python 3.10 ou superior
 **ATENÇÃO Execute o comando dentro do diretorio do projeto!**
 
 No linux:
+<a id="ancora1"></a>
 - Para criação do ambiente:
 ```
 python3 -m venv venv
@@ -31,7 +32,8 @@ Todos as bibliotecas e suas versões estão no arquivo [requisitos](requirements
 
 Para instalar as bibliotecas siga os passos:
 
-**ATENÇÃO Ative o seu ambiente antes executar esses comandos!**
+**ATENÇÃO [Ative](#ancora1) o seu ambiente antes executar esses comandos!**
+*Será criado o ambiente python e criado a base de dados*
 
 
 No Linux:
@@ -46,32 +48,14 @@ venv\Scripts\pip install -r requirements.txt
 ```
 Ou execute o [Script Batch](requirements.bat)
 
-## Configuração do banco de dados
 
-Para configurar o banco de dados siga o passos:
-
-No linux:
-```
-venv/bin/python3
-from project import db, create_app, models
-db.create_all(app=create_app())
-exit()
-```
-No windows:
-```
-venv\Scripts\python
-from project import db, create_app, models
-db.create_all(app=create_app())
-exit()
-```
-
-Acesse [127.0.0.1/signup](http://127.0.0.1/signup), para criar o usuário com *username* **admin**
+Acesse página do [signup](http://127.0.0.1:8085/signup), para criar o usuário com *username* **admin**
 
 ## Execução do projeto
 
 Para executar o projeto siga os passos:
 
-**ATENÇÃO Ative o seu ambiente antes executar esses comandos!**
+**ATENÇÃO [Ative](#ancora1) o seu ambiente antes executar esses comandos!**
 
 No Linux:
 ```
