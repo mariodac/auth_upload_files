@@ -84,7 +84,7 @@ def create_app():
             save_file = os.path.join(app.config['UPLOAD_PATH'], filename)
             uploaded_file.save(save_file)
             logger.info('File save in %s',save_file)
-            os.system("sudo systemctl restart rs")
+            # os.system("sudo systemctl restart rs")
         # print('arquivo enviado')
         return '', 204
 
