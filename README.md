@@ -46,6 +46,25 @@ venv\Scripts\pip install -r requirements.txt
 ```
 Ou execute o [Script Batch](requirements.bat)
 
+## Configuração do banco de dados
+
+Na pasta project já está criado uma banco de dados, caso queira criar outro banco de dados siga o passos:
+
+No linux:
+```
+venv/bin/python3
+from project import db, create_app, models
+db.create_all(app=create_app())
+exit()
+```
+No windows:
+```
+venv\Scripts\python
+from project import db, create_app, models
+db.create_all(app=create_app())
+exit()
+```
+
 ## Execução do projeto
 
 Para executar o projeto siga os passos:
