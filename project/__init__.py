@@ -29,7 +29,7 @@ def create_app():
 
     app.config['SECRET_KEY'] = 'secret-key-goes-here'
     app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///db.sqlite'
-    app.config['MAX_CONTENT_LENGTH'] = 5 * 2048 * 2048
+    app.config['MAX_CONTENT_LENGTH'] = 5120 * 1024 * 1024
     app.config['UPLOAD_EXTENSIONS'] = ['.jpg', '.png', '.gif', '.mp4', '.avi', '.mpeg']
     app.config['UPLOAD_PATH'] = 'project/static/uploads/'
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
@@ -79,7 +79,8 @@ def create_app():
         if filename != '':
             file_ext = os.path.splitext(filename)[1]
             if file_ext not in app.config['UPLOAD_EXTENSIONS']:
-                return "Invalid image", 400
+                return "Invalid media file", 400
+            logger.info("Invalid media file")
             save_file = os.path.join(app.config['UPLOAD_PATH'], filename)
             uploaded_file.save(save_file)
             logger.info('File save in %s',save_file)
