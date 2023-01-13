@@ -75,6 +75,8 @@ def create_app():
     def upload_files():
         uploaded_file = request.files['file']
         filename = secure_filename(uploaded_file.filename)
+        file_finish = open(os.path.join('project/static/',"data-final.txt"), 'a')
+        # file_finish.truncate(0)
         # filename = filename.replace('', '-')
         if filename != '':
             file_ext = os.path.splitext(filename)[1]
@@ -85,7 +87,9 @@ def create_app():
             uploaded_file.save(save_file)
             logger.info('File save in %s',save_file)
             # os.system("sudo systemctl restart rs")
-        # print('arquivo enviado')
+        file_finish.write(request.form['finish']+': '+save_file+'\n')
+        file_finish.close()
+        print('arquivo enviado')
         return '', 204
 
     @app.route('/uploads/<filename>')
