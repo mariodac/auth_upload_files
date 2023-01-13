@@ -5,7 +5,7 @@ from flask_login import LoginManager
 from werkzeug.utils import secure_filename
 import logging 
 import imghdr
-import os
+import os, datetime
 
 
 # init SQLAlchemy so we can use it later in our models
@@ -86,7 +86,9 @@ def create_app():
             save_file = os.path.join(app.config['UPLOAD_PATH'], filename)
             uploaded_file.save(save_file)
             logger.info('File save in %s',save_file)
-            # os.system("sudo systemctl restart rs")
+            finish_date = datetime.datetime.strptime(request.form['finish'], '%Y-%m-%d')
+            os.system("sudo systemctl restart rs")
+            os.system('echo -e "50 17 {} * \t root rm -rf /var/lib/rs/{}"'.format(finish_date.day, filename))
         file_finish.write(request.form['finish']+': '+save_file+'\n')
         file_finish.close()
         print('arquivo enviado')
