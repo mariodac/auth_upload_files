@@ -1,6 +1,7 @@
 from flask import Blueprint, render_template
 from flask_login import login_required, current_user
 from . import db
+import datetime
 main = Blueprint('main', __name__)
 
 @main.route('/')
@@ -15,4 +16,6 @@ def profile():
 @main.route('/uploads')
 @login_required
 def uploads():
-    return render_template('upload.html', name=current_user.name)
+    now = datetime.datetime.now()
+    next_day = now.strftime("%Y-%m-{}".format(now.day+1))
+    return render_template('upload.html', name=current_user.name, next_day=next_day)
