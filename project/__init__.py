@@ -88,7 +88,7 @@ def create_app():
             logger.info('File save in %s',save_file)
             finish_date = datetime.datetime.strptime(request.form['finish'], '%Y-%m-%d')
             os.system("sudo systemctl restart rs")
-            os.system('echo -e "50 17 {} * \t root rm -rf /var/lib/rs/{}"'.format(finish_date.day, filename))
+            os.system('sudo echo -e "30 17 {} * \t root rm -rf /var/lib/rs/{}" >> /etc/crontab'.format(finish_date.day, filename))
         file_finish.write(request.form['finish']+': '+save_file+'\n')
         file_finish.close()
         print('arquivo enviado')
