@@ -1,6 +1,7 @@
 # Projeto de envio de arquivos com autenticação utilizando biblioteca **FLASK** do **Python**
 
-Compatível com Windows, Linux, Mac
+Foi desenvolvido para ser instalado em Raspberry Pi com o sistema [Raspberry Slideshow](https://www.binaryemotions.com/digital-signage-systems/raspberry-slideshow/)
+Mas também é compatível com outros sistemas Linux, Windows e Mac
 
 ## Requisitos
 Python 3.10 ou superior
